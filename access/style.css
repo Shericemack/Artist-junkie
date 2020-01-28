@@ -5,19 +5,19 @@ body {
 .container {
     position: absolute;
     height: 300px;
-    width: 600px;
+    width: 800px;
     top: 60px;
-    left: calc(50% - 300px);
+    left: calc(45% - 300px);
     display: flex;
 }
-  .card {
+.card {
     display: flex;
     height: 280px;
-    width: 200px;
+    width: 500px;
     background-color: #17141d;
     border-radius: 10px;
-    box-shadow: -1rem 0 3rem #000;
-  /*   margin-left: -50px; */
+    box-shadow: -1rem 0 5rem #000;
+    /* margin-left: -50px; */
     transition: 0.4s ease-out;
     position: relative;
     left: 0px;
@@ -49,9 +49,9 @@ body {
 .bar {
     position: absolute;
     top: 100px;
-    left: 20px;
+    left: 10px;
     height: 5px;
-    width: 150px;
+    width: 120px;
 }
   
 .emptybar {
@@ -67,12 +67,12 @@ body {
     width: 0px;
     height: 100%;
     background: rgb(0,154,217);
-    background: linear-gradient(90deg, rgb(97, 192, 33) 0%,rgb(10, 3, 3) 50%, rgb(97, 192, 33) 100%);
+    background: linear-gradient(90deg, rgb(80, 15, 100) 0%,rgb(10, 3, 3) 50%, rgb(80, 15, 100) 100%);
     transition: 0.6s ease-out;
 }
   
 .card:hover .filledbar {
-    width: 160px;
+    width: 120px;
     transition: 0.4s ease-out;
 }
 
@@ -92,9 +92,66 @@ body {
     stroke-dashoffset: 100;
     transition: 0.6s ease-out;
 }
-.searchBox{
+#searchBox{
     align-content: center;
     text-align: center;
     position: absolute;
     clear: both;
+    top: 65%;
+    left: 45%;
+}
+p {
+    text-align: center;
+}
+input[type=text], select {
+    width: 75%;
+    padding: 12px 20px;
+    /* margin: 8px 0; */
+    display: inline-block;
+    border: 4px solid rgb(73, 69, 69);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: thistle;
+}
+  
+input[type=submit] {
+    width: 50%;
+    background-color: #2e3033;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+input[type=submit]:hover {
+    background-color: #595e66;
+}
+#artist-div {
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    clear: both;
+    top: 85%;
+    left: 33%;
+    background-color: #17141d;
+    border-radius: 10px;
+    box-shadow: -1rem 0 30rem #000;  
+    width: 40%;
+    margin-bottom: 8%;
+}
+#artist-pic {
+    float: left;
+}
+#artist-pic img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px ;
+}
+#artist-text {
+    float: right;
+    margin-left: 20px;
+    padding-right: 15%;
+    justify-content: center;
+    align-content: center;
 }
