@@ -28,7 +28,9 @@ $.ajax(settings).done(function (response) {
 //play a preview of the song
     var playDiv = $("#play");
     var playSong = response.data[0].preview;
-    var song = new Audio("https://cdns-preview-a.dzcdn.net/stream/c-a05eed2c1f358acddbf70847ea95b4c5-6.mp3")
+    console.log(playSong);
+    var song = new Audio(playSong);
+    song.play();
     // playDiv.append(playSong);
     playDiv.append(song);
     
