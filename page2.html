@@ -10,9 +10,134 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href ="access/style.css">
     <title>Artist Junkie</title>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
   </head>
   <body>
-      <h1>Artist Junkie</h1>
+    <div id="header">
+        <h1>Artist Junkie</h1>
+        <div id="nav">
+
+              <a href=index.html>Stalk</a>
+              <a href=page2.html>Listen</a>
+
+        </div>
+      </div>
+      <div class="container">
+        <div class="card">
+          <!-- <h3 class="title">Eminem</h3> -->
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="images">
+            <img src="images/eminem.jpg" width="140" height="125">
+          </div>
+          <div class="textbox">
+              <p>Debut Sinlge: My name is</p>
+              <p>Search Eminem below</p>
+          </div>
+        </div>
+        <div class="card">
+          <!-- <h3 class="title">DJ Khaled</h3> -->
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="images">
+            <img src="images/dj k.jpg" width="140" height="125">
+          </div>
+          <div class="textbox">
+              <p>Debut Sinlge: Holla at Me</p>
+              <p>Search DJ Khaled below</p>
+          </div>
+        </div>
+        <div class="card">
+          <!-- <h3 class="title">Arianna Grande</h3> -->
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="images">
+            <img src="images/arianna grande.jpg" width="140" height="125">
+          </div>
+          <div class="textbox">
+              <p>Debut Sinlge: Put Your Hearts Up</p>
+              <p>Search Arianna below</p>
+          </div>
+        </div>
+        <div class="card">
+          <!-- <h3 class="title">Bruno Mars</h3> -->
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="images">
+            <img src="images/bruno.jpg" width="140" height="125">
+          </div>
+          <div class="textbox">
+              <p>Debut Sinlge: Just the way you Are</p>
+              <p>Search Bruno Mars below</p>
+          </div>
+        </div>
+        <div class="card">
+          <!-- <h3 class="title">Cardi B</h3> -->
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="images">
+            <img src="images/cardi.jpg" width="140" height="125">
+          </div>
+          <div class="textbox">
+              <p>Debut Sinlge: Bodak Yellow</p>
+              <p>Search Cardi B below</p>
+          </div>
+        </div>
+        <div class="card">
+          <!-- <h3 class="title">Meg The Stallion</h3> -->
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="images">
+           <img src="images/meg.jpg" width="140" height="125">
+          </div>
+          <div class="textbox">
+              <p>Debut Sinlge: Big Ole Freak</p>
+              <p>Search Meg the Stallion below</p>
+          </div>
+        </div>
+        <div class="card">
+          <!-- <h3 class="title">migos</h3> -->
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="images">
+            <img src="images/migos.jpg" width="140" height ="125">
+          </div>
+          <div class="textbox">
+              <p>Debut Sinlge: Versace</p>
+              <p>Search Migos below</p>
+          </div>
+        </div>
+        <div class="card">
+          <!-- <h3 class="title">Sam Cooke</h3> -->
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="images">
+            <img src="images/sam cooke.jpg" width="140" height ="125">
+          </div>
+          <div class="textbox">
+              <p>Debut Sinlge: You Send Me</p>
+              <p>Search Sam Cooke below</p>
+          </div>
+        </div>
+      </div>
       <div class="wrapper">
         <div id="search-Box">
         <form id="artist-form">
@@ -26,6 +151,9 @@
         <div id="artist-info"></div>
     </div>
     <div id="play"></div>
+    <div id="listeners"> 
+        <h3>There are <strong><span id="connected-viewers"></span></strong> people listening right now!</h3>
+    </div>
     
 
     <!-- Optional JavaScript -->
@@ -34,6 +162,7 @@
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
     <script src="access/page2.js"></script>
 </body>
 </html>

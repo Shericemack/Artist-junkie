@@ -6,10 +6,12 @@ function searchBandsInTown(artist) {
       method: "GET"
     }).then(function(response){
       console.log(response);   
+      var artistDiv = $("#artist-div");
     // Using jQuery, append the following to the artist-div:
     var artDiv = $("#artist-text");
-    artDiv.empty
+    artDiv.empty();
     var artPic = $("#artist-pic");
+    artPic.empty();
     // The artists thumbnail image
     var pic = response.thumb_url;
     var image = $("<img>").attr("src", pic)
